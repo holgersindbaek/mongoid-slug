@@ -84,7 +84,7 @@ module Mongoid
         # Regular expression that matches slug, slug-1, ... slug-n
         # If slug_name field was indexed, MongoDB will utilize that
         # index to match /^.../ pattern.
-        pattern = /^#{Regexp.escape(@_slug)}(?:-(\d+))?$/
+        pattern = /^#{Regexp.escape(@_slug)}(?:_(\d+))?$/
 
         where_hash = {}
         where_hash[:_slugs.all] = [pattern]
